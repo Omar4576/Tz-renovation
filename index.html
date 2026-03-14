@@ -12,15 +12,16 @@
     <nav class="bg-white shadow-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
-                <div class="flex-shrink-0">
+                <a href="index.html" class="flex-shrink-0 cursor-pointer">
                     <span class="text-2xl font-bold text-yellow-600">T&Z</span>
                     <span class="text-xs block text-gray-500 uppercase">Golden Construction</span>
-                </div>
-                <div class="hidden md:flex space-x-8 font-medium">
-                    <a href="#about" class="hover:text-yellow-600 transition">About</a>
-                    <a href="#services" class="hover:text-yellow-600 transition">Services</a>
-                    <a href="#portfolio" class="hover:text-yellow-600 transition">Portfolio</a>
-                    <a href="#contact" class="bg-yellow-600 text-white px-5 py-2 rounded-lg hover:bg-yellow-700 transition">Contact Us</a>
+                </a>
+                <div class="hidden md:flex space-x-8 font-medium items-center">
+                    <a href="index.html" class="text-yellow-600 transition">Home</a>
+                    <a href="about.html" class="hover:text-yellow-600 transition">About</a>
+                    <a href="services.html" class="hover:text-yellow-600 transition">Services</a>
+                    <a href="portfolio.html" class="hover:text-yellow-600 transition">Portfolio</a>
+                    <a href="contact.html" class="bg-yellow-600 text-white px-5 py-2 rounded-lg hover:bg-yellow-700 transition">Contact Us</a>
                 </div>
             </div>
         </div>
@@ -34,58 +35,45 @@
             <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-4">Adding Value to <br>Your Property</h1>
             <p class="text-xl md:text-2xl mb-8 max-w-2xl text-gray-200">Premium Construction & Renovation bringing Moscow's elite standards to the UAE market.</p>
             <div class="flex space-x-4">
-                <a href="#services" class="bg-yellow-600 px-8 py-3 rounded-md text-lg font-semibold hover:bg-yellow-700">Our Services</a>
-                <a href="#portfolio" class="border border-white px-8 py-3 rounded-md text-lg font-semibold hover:bg-white hover:text-black transition">View Projects</a>
+                <a href="services.html" class="bg-yellow-600 px-8 py-3 rounded-md text-lg font-semibold hover:bg-yellow-700">Our Services</a>
+                <a href="portfolio.html" class="border border-white px-8 py-3 rounded-md text-lg font-semibold hover:bg-white hover:text-black transition">View Projects</a>
             </div>
         </div>
     </section>
 
-    <section class="py-12 bg-white">
-        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-                <div class="text-4xl font-bold text-yellow-600">10+</div>
-                <div class="text-gray-600 uppercase text-sm tracking-widest mt-2">Years Leadership</div>
-            </div>
-            <div>
-                <div class="text-4xl font-bold text-yellow-600">50+</div>
-                <div class="text-gray-600 uppercase text-sm tracking-widest mt-2">State Projects</div>
-            </div>
-            <div>
-                <div class="text-4xl font-bold text-yellow-600">3</div>
-                <div class="text-gray-600 uppercase text-sm tracking-widest mt-2">Global Markets</div>
-            </div>
-            <div>
-                <div class="text-4xl font-bold text-yellow-600">2021</div>
-                <div class="text-gray-600 uppercase text-sm tracking-widest mt-2">Gov Recognition</div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="py-20 bg-gray-50">
+    <section class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 text-center mb-16">
             <h2 class="text-4xl font-bold mb-4">Core Services for the UAE Market</h2>
             <div class="w-20 h-1 bg-yellow-600 mx-auto"></div>
         </div>
+        
         <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-8">
-            <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition border-t-4 border-yellow-600">
-                <i class="fa-solid fa-house-chimney text-3xl text-yellow-600 mb-4"></i>
-                <h3 class="text-xl font-bold mb-2">Villa Construction</h3>
+            
+            <a href="services.html#villa-construction" class="block bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition transform hover:-translate-y-2 border-t-4 border-yellow-600 cursor-pointer group">
+                <i class="fa-solid fa-house-chimney text-3xl text-yellow-600 mb-4 group-hover:scale-110 transition-transform"></i>
+                <h3 class="text-xl font-bold mb-2 text-gray-900">Villa Construction</h3>
                 <p class="text-gray-600">End-to-end premium quality construction with strict on-time delivery.</p>
-            </div>
-            <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition border-t-4 border-yellow-600">
-                <i class="fa-solid fa-screwdriver-wrench text-3xl text-yellow-600 mb-4"></i>
-                <h3 class="text-xl font-bold mb-2">Renovation & Fit-Out</h3>
+            </a>
+
+            <a href="services.html#renovation" class="block bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition transform hover:-translate-y-2 border-t-4 border-yellow-600 cursor-pointer group">
+                <i class="fa-solid fa-screwdriver-wrench text-3xl text-yellow-600 mb-4 group-hover:scale-110 transition-transform"></i>
+                <h3 class="text-xl font-bold mb-2 text-gray-900">Renovation & Fit-Out</h3>
                 <p class="text-gray-600">Complete interior and exterior renovation with high-quality finishing.</p>
-            </div>
-            <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition border-t-4 border-yellow-600">
-                <i class="fa-solid fa-microchip text-3xl text-yellow-600 mb-4"></i>
-                <h3 class="text-xl font-bold mb-2">Smart Home Systems</h3>
+            </a>
+
+            <a href="services.html#smart-home" class="block bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition transform hover:-translate-y-2 border-t-4 border-yellow-600 cursor-pointer group">
+                <i class="fa-solid fa-microchip text-3xl text-yellow-600 mb-4 group-hover:scale-110 transition-transform"></i>
+                <h3 class="text-xl font-bold mb-2 text-gray-900">Smart Home Systems</h3>
                 <p class="text-gray-600">Integration of lighting, climate, security, and automation technologies.</p>
-            </div>
+            </a>
+
+        </div>
+        <div class="text-center mt-12">
+            <a href="services.html" class="text-yellow-600 font-bold hover:underline">View All Services &rarr;</a>
         </div>
     </section>
 
-    <footer id="contact" class="bg-gray-900 text-white py-12">
+    <footer class="bg-gray-900 text-white py-12">
         <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-12 border-b border-gray-800 pb-12">
             <div>
                 <h4 class="text-2xl font-bold mb-6">T&Z Golden</h4>
@@ -100,8 +88,12 @@
                 </ul>
             </div>
             <div>
-                <h4 class="text-xl font-bold mb-6">Office Hours</h4>
-                <p class="text-gray-400">Monday - Friday: 09:00 - 18:00<br>Saturday: By Appointment Only</p>
+                <h4 class="text-xl font-bold mb-6">Quick Links</h4>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="about.html" class="hover:text-yellow-600">Company History</a></li>
+                    <li><a href="portfolio.html" class="hover:text-yellow-600">Our Projects</a></li>
+                    <li><a href="contact.html" class="hover:text-yellow-600">Request a Quote</a></li>
+                </ul>
             </div>
         </div>
         <div class="max-w-7xl mx-auto px-4 text-center pt-8 text-gray-500 text-sm">
