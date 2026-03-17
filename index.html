@@ -3,176 +3,258 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>T&Z Golden | Premium Construction</title>
+    <title>T&Z Golden | Architectural Excellence</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Inter:wght@300;400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&family=Inter:wght@300;400;500&display=swap');
         
+        /* * PREMIUM NEUTRAL PALETTE 
+         * Background: Alabaster Stone (#F3F2EE)
+         * Text: Rich Black (#111111)
+         */
         body { 
             font-family: 'Inter', sans-serif; 
-            background-color: #0a0a0a; /* Deep architectural black */
-            color: #ffffff; 
+            background-color: #F3F2EE; 
+            color: #111111; 
+            overflow-x: hidden;
         }
-        h1, h2, h3, h4, h5, .font-heading { 
+        h1, h2, h3, h4, .font-heading { 
             font-family: 'Montserrat', sans-serif; 
             text-transform: uppercase;
         }
-        
-        .text-gold { color: #d4af37; }
-        .bg-gold { background-color: #d4af37; }
-        .border-gold { border-color: #d4af37; }
 
-        /* Smooth floating animations for the 3 images */
-        @keyframes float {
+        .bg-rich-black { background-color: #111111; color: #F3F2EE; }
+        .text-rich-black { color: #111111; }
+        
+        /* Subtle Accent - Muted Bronze */
+        .text-accent { color: #A68A56; }
+        .border-accent { border-color: #A68A56; }
+        .bg-accent { background-color: #A68A56; }
+
+        /* Floating Animations for the 3 Portfolio Images */
+        @keyframes float-subtle {
             0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
+            50% { transform: translateY(-10px); }
             100% { transform: translateY(0px); }
         }
-        @keyframes float-delayed {
+        @keyframes float-subtle-delayed {
             0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
+            50% { transform: translateY(-10px); }
             100% { transform: translateY(0px); }
         }
         
-        .animate-float { animation: float 6s ease-in-out infinite; }
-        .animate-float-delayed { animation: float-delayed 8s ease-in-out infinite; animation-delay: 2s; }
+        .animate-float { animation: float-subtle 7s ease-in-out infinite; }
+        .animate-float-delayed { animation: float-subtle-delayed 9s ease-in-out infinite; animation-delay: 2s; }
+        
+        /* Image Hover Zoom */
+        .img-zoom { transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        .group:hover .img-zoom { transform: scale(1.05); }
     </style>
 </head>
-<body class="antialiased overflow-x-hidden selection:bg-white selection:text-black">
+<body class="antialiased selection:bg-[#111111] selection:text-white">
 
-    <nav class="fixed w-full z-50 top-0 bg-[#0a0a0a]/90 backdrop-blur-md border-b border-white/10 transition-all duration-300">
-        <div class="max-w-[90rem] mx-auto px-6 lg:px-12">
+    <nav class="fixed w-full z-50 top-0 bg-[#F3F2EE]/90 backdrop-blur-md border-b border-black/5 transition-all duration-300">
+        <div class="max-w-[100rem] mx-auto px-6 lg:px-12">
             <div class="flex justify-between h-24 items-center">
                 <a href="#home" class="flex-shrink-0">
-                    <span class="text-3xl font-heading font-black tracking-tighter text-white">T&Z <span class="text-gold">GOLDEN</span></span>
+                    <span class="text-2xl md:text-3xl font-heading font-black tracking-tighter text-rich-black">T&Z <span class="text-accent font-bold">GOLDEN</span></span>
                 </a>
-                <div class="hidden lg:flex space-x-10 font-semibold tracking-[0.2em] items-center text-xs text-gray-400">
-                    <a href="#home" class="hover:text-white transition">Home</a>
-                    <a href="#about" class="hover:text-white transition">About Us</a>
-                    <a href="#services" class="hover:text-white transition">Services</a>
-                    <a href="#portfolio" class="hover:text-white transition">Projects</a>
-                    <a href="#contact" class="hover:text-white transition">Contact Us</a>
-                    <a href="#contact" class="bg-white text-black px-8 py-3 hover:bg-gold hover:text-white transition duration-300 font-bold">LET'S TALK</a>
+                <div class="hidden lg:flex space-x-12 font-heading font-bold tracking-[0.2em] items-center text-[10px] text-gray-500">
+                    <a href="#home" class="hover:text-rich-black transition">HOME</a>
+                    <a href="#about" class="hover:text-rich-black transition">PHILOSOPHY</a>
+                    <a href="#portfolio" class="hover:text-rich-black transition">EXECUTION</a>
+                    <a href="#services" class="hover:text-rich-black transition">EXPERTISE</a>
+                    <a href="#contact" class="bg-rich-black text-[#F3F2EE] px-8 py-4 hover:bg-accent hover:text-white transition duration-400">INITIATE PROJECT</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <section id="home" class="relative min-h-screen flex items-center pt-24 overflow-hidden">
-        <div class="max-w-[90rem] mx-auto px-6 lg:px-12 w-full grid lg:grid-cols-2 gap-12 items-center relative z-10">
+    <section id="home" class="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden">
+        <div class="max-w-[100rem] mx-auto px-6 lg:px-12 w-full grid lg:grid-cols-12 gap-8 items-center relative z-10">
             
-            <div class="pt-20 pb-24 z-20">
-                <p class="text-gold tracking-[0.3em] font-bold text-sm mb-6">WE ARE T&Z GOLDEN CONSTRUCTION</p>
-                <h1 class="text-6xl md:text-7xl lg:text-[5.5rem] font-heading font-black leading-[0.9] mb-8 tracking-tighter">
-                    ADDING VALUE <br>TO YOUR <br><span class="text-transparent border-text" style="-webkit-text-stroke: 2px white;">PROPERTY.</span>
+            <div class="lg:col-span-7 z-20 pt-10">
+                <p class="text-accent tracking-[0.4em] font-bold text-xs mb-8">PREMIUM CONSTRUCTION & RENOVATION</p>
+                
+                <h1 class="text-[4rem] sm:text-[6rem] lg:text-[7.5rem] font-heading font-black leading-[0.85] tracking-tighter text-rich-black mb-8">
+                    ADDING <br>UNYIELDING <br>VALUE.
                 </h1>
-                <p class="text-lg text-gray-400 mb-10 font-light max-w-lg leading-relaxed">
-                    Building with excellence, honesty, and uncompromising transparency. From monumental state projects in Moscow to premium execution in the UAE.
+                
+                <p class="text-lg md:text-xl text-gray-600 mb-12 font-light max-w-xl leading-relaxed">
+                    Bringing rigorous European engineering standards to the UAE. We execute visionary architecture with single-point accountability and absolute transparency.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-6">
-                    <a href="#portfolio" class="border border-white text-white px-10 py-5 text-sm font-heading font-bold tracking-[0.2em] hover:bg-white hover:text-black transition duration-300 text-center">
-                        VIEW OUR PROJECTS
-                    </a>
-                </div>
+                <a href="#portfolio" class="inline-block border-b-2 border-rich-black text-rich-black pb-2 font-heading font-bold tracking-[0.2em] text-sm hover:text-accent hover:border-accent transition duration-300">
+                    EXPLORE OUR WORK &rarr;
+                </a>
             </div>
 
-            <div class="absolute right-0 top-0 w-full lg:w-[55%] h-full z-0 opacity-40 lg:opacity-100">
-                <div class="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/50 to-transparent lg:w-1/3 z-10"></div>
-                <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent z-10"></div>
-                <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1920&q=80" alt="Luxury Modern Villa" class="w-full h-full object-cover filter contrast-125">
+            <div class="lg:col-span-5 relative h-[60vh] lg:h-[80vh] w-full mt-12 lg:mt-0">
+                <div class="absolute inset-0 bg-accent/10 transform translate-x-4 translate-y-4"></div>
+                <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80" alt="Premium Villa" class="w-full h-full object-cover relative z-10 shadow-2xl filter contrast-[1.1] grayscale-[20%]">
             </div>
+
         </div>
     </section>
 
-    <section id="portfolio" class="py-32 bg-[#0a0a0a] border-y border-white/5 relative">
-        <div class="max-w-[90rem] mx-auto px-6 lg:px-12">
+    <section id="about" class="py-32 bg-white border-y border-black/5">
+        <div class="max-w-[100rem] mx-auto px-6 lg:px-12 grid md:grid-cols-2 gap-20 items-center">
             
-            <div class="text-center mb-20">
-                <p class="text-gold tracking-[0.3em] font-bold text-sm mb-4">OUR EXECUTION</p>
-                <h2 class="text-5xl md:text-6xl font-heading font-black text-white">RECENT PROJECTS</h2>
+            <div>
+                <h2 class="text-4xl md:text-5xl font-heading font-black text-rich-black leading-tight mb-8">
+                    WE DON'T JUST MANAGE PROJECTS. <br><span class="text-accent">WE BUILD THEM.</span>
+                </h2>
+                <p class="text-lg text-gray-600 font-light leading-relaxed mb-6">
+                    In the luxury real estate market, fragmented subcontractors lead to compromised execution. Since 2016, T&Z Golden has operated on a model of single accountability. 
+                </p>
+                <p class="text-lg text-gray-600 font-light leading-relaxed">
+                    We act as your singular responsible team, ensuring absolute oversight of site quality, materials, and finish consistency from the foundation to the final polish. Our approach is designed for a long-term reputation in Dubai, built on relationship-first service.
+                </p>
             </div>
 
-            <div class="w-full aspect-video bg-black border border-white/10 mb-20 relative group">
-                <video controls class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-1000" poster="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80">
+            <div class="grid grid-cols-2 gap-x-8 gap-y-12">
+                <div class="border-t-2 border-rich-black pt-6">
+                    <span class="text-5xl font-heading font-black text-rich-black">10+</span>
+                    <p class="text-xs font-heading font-bold tracking-widest text-gray-500 mt-3">YEARS LEADERSHIP</p>
+                </div>
+                <div class="border-t-2 border-rich-black pt-6">
+                    <span class="text-5xl font-heading font-black text-rich-black">50+</span>
+                    <p class="text-xs font-heading font-bold tracking-widest text-gray-500 mt-3">STATE PROJECTS</p>
+                </div>
+                <div class="col-span-2 bg-[#F3F2EE] p-8 border border-black/5 flex items-start gap-6">
+                    <i class="fa-solid fa-award text-4xl text-accent"></i>
+                    <div>
+                        <h4 class="font-heading font-bold text-rich-black mb-2">MOSCOW GOVERNMENT AWARD</h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">Officially recognized in 2021 for high professionalism and significant contribution to major public construction projects.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-40 bg-rich-black relative">
+        <div class="max-w-[100rem] mx-auto px-6 lg:px-12">
+            
+            <div class="text-center mb-24">
+                <p class="text-accent tracking-[0.4em] font-bold text-xs mb-4">VISUAL PROOF</p>
+                <h2 class="text-5xl md:text-7xl font-heading font-black text-[#F3F2EE]">RECENT EXECUTION</h2>
+            </div>
+
+            <div class="w-full max-w-6xl mx-auto aspect-video bg-black border border-white/10 mb-32 relative shadow-2xl">
+                <video controls class="w-full h-full object-cover" poster="https://images.unsplash.com/photo-1541881451970-13e6d1163462?auto=format&fit=crop&w=1920&q=80">
                     <source src="assets/master-edit.mp4" type="video/mp4">
                 </video>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="h-[28rem] overflow-hidden animate-float border border-white/10 bg-black">
-                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="Construction detail" class="w-full h-full object-cover filter brightness-75 hover:brightness-110 hover:scale-105 transition duration-700">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                
+                <div class="h-[30rem] overflow-hidden animate-float bg-black group shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="Execution" class="w-full h-full object-cover img-zoom filter grayscale-[30%] contrast-125">
                 </div>
                 
-                <div class="h-[28rem] overflow-hidden animate-float-delayed mt-0 md:mt-16 border border-white/10 bg-black">
-                    <img src="https://images.unsplash.com/photo-1541881451970-13e6d1163462?auto=format&fit=crop&w=800&q=80" alt="Architecture detail" class="w-full h-full object-cover filter brightness-75 hover:brightness-110 hover:scale-105 transition duration-700">
+                <div class="h-[30rem] overflow-hidden animate-float-delayed mt-0 md:mt-16 bg-black group shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80" alt="Execution" class="w-full h-full object-cover img-zoom filter grayscale-[30%] contrast-125">
                 </div>
                 
-                <div class="h-[28rem] overflow-hidden animate-float border border-white/10 bg-black">
-                    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80" alt="Interior detail" class="w-full h-full object-cover filter brightness-75 hover:brightness-110 hover:scale-105 transition duration-700">
+                <div class="h-[30rem] overflow-hidden animate-float bg-black group shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80" alt="Execution" class="w-full h-full object-cover img-zoom filter grayscale-[30%] contrast-125">
                 </div>
+
             </div>
         </div>
     </section>
 
-    <section id="services" class="py-32 bg-[#0f0f0f]">
-        <div class="max-w-[90rem] mx-auto px-6 lg:px-12">
+    <section id="services" class="py-32 bg-[#F3F2EE]">
+        <div class="max-w-[100rem] mx-auto px-6 lg:px-12">
+            
             <div class="mb-20">
-                <p class="text-gold tracking-[0.3em] font-bold text-sm mb-4">WHAT WE DO</p>
-                <h2 class="text-5xl md:text-6xl font-heading font-black text-white">MASTER CRAFTSMANSHIP</h2>
+                <p class="text-accent tracking-[0.4em] font-bold text-xs mb-4">END-TO-END SOLUTIONS</p>
+                <h2 class="text-5xl md:text-6xl font-heading font-black text-rich-black">MASTER CRAFTSMANSHIP</h2>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-[#0a0a0a] p-12 border border-white/10 hover:border-gold transition duration-500 group">
-                    <i class="fa-solid fa-house text-4xl text-gray-600 group-hover:text-gold transition duration-500 mb-8"></i>
-                    <h3 class="text-2xl font-heading font-bold text-white mb-4">VILLA CONSTRUCTION</h3>
-                    <p class="text-gray-400 font-light leading-relaxed">End-to-end premium quality structure execution with strict on-time delivery.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+                
+                <div class="border-t border-rich-black pt-8 group">
+                    <i class="fa-solid fa-house text-3xl text-rich-black mb-6 group-hover:text-accent transition duration-300"></i>
+                    <h3 class="text-xl font-heading font-bold text-rich-black mb-4">VILLA CONSTRUCTION</h3>
+                    <p class="text-gray-600 font-light leading-relaxed">End-to-end premium quality structure execution with rigorous engineering and strict on-time delivery.</p>
                 </div>
-                <div class="bg-[#0a0a0a] p-12 border border-white/10 hover:border-gold transition duration-500 group">
-                    <i class="fa-solid fa-paint-roller text-4xl text-gray-600 group-hover:text-gold transition duration-500 mb-8"></i>
-                    <h3 class="text-2xl font-heading font-bold text-white mb-4">RENOVATION & FIT-OUT</h3>
-                    <p class="text-gray-400 font-light leading-relaxed">Complete interior and exterior transformations featuring immaculate finishing.</p>
+                
+                <div class="border-t border-rich-black pt-8 group">
+                    <i class="fa-solid fa-paint-roller text-3xl text-rich-black mb-6 group-hover:text-accent transition duration-300"></i>
+                    <h3 class="text-xl font-heading font-bold text-rich-black mb-4">RENOVATION & FIT-OUT</h3>
+                    <p class="text-gray-600 font-light leading-relaxed">Complete interior and exterior transformations. We utilize automated machine plastering for flawless finishing.</p>
                 </div>
-                <div class="bg-[#0a0a0a] p-12 border border-white/10 hover:border-gold transition duration-500 group">
-                    <i class="fa-solid fa-fan text-4xl text-gray-600 group-hover:text-gold transition duration-500 mb-8"></i>
-                    <h3 class="text-2xl font-heading font-bold text-white mb-4">HVAC & TECHNICAL</h3>
-                    <p class="text-gray-400 font-light leading-relaxed">Advanced design and installation of high-efficiency climate systems.</p>
+                
+                <div class="border-t border-rich-black pt-8 group">
+                    <i class="fa-solid fa-fan text-3xl text-rich-black mb-6 group-hover:text-accent transition duration-300"></i>
+                    <h3 class="text-xl font-heading font-bold text-rich-black mb-4">HVAC & TECHNICAL</h3>
+                    <p class="text-gray-600 font-light leading-relaxed">Precision MEP (Mechanical, Electrical, Plumbing) routing and installation of high-efficiency climate systems.</p>
                 </div>
+
+                <div class="border-t border-rich-black pt-8 group">
+                    <i class="fa-solid fa-couch text-3xl text-rich-black mb-6 group-hover:text-accent transition duration-300"></i>
+                    <h3 class="text-xl font-heading font-bold text-rich-black mb-4">FURNITURE & JOINERY</h3>
+                    <p class="text-gray-600 font-light leading-relaxed">Bespoke fitted interior elements, custom wood paneling, and architectural details crafted to match your vision.</p>
+                </div>
+
+                <div class="border-t border-rich-black pt-8 group">
+                    <i class="fa-solid fa-microchip text-3xl text-rich-black mb-6 group-hover:text-accent transition duration-300"></i>
+                    <h3 class="text-xl font-heading font-bold text-rich-black mb-4">SMART HOME SYSTEMS</h3>
+                    <p class="text-gray-600 font-light leading-relaxed">Seamless integration of modern lighting, security networks, and total environmental automation technology.</p>
+                </div>
+
+                <div class="border-t border-rich-black pt-8 group">
+                    <i class="fa-solid fa-temperature-arrow-up text-3xl text-rich-black mb-6 group-hover:text-accent transition duration-300"></i>
+                    <h3 class="text-xl font-heading font-bold text-rich-black mb-4">UNDERFLOOR HEATING</h3>
+                    <p class="text-gray-600 font-light leading-relaxed">Invisible, modern heating solutions providing unparalleled comfort and baseline energy efficiency.</p>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <footer id="contact" class="bg-[#0a0a0a] pt-32 pb-12 border-t border-white/10">
-        <div class="max-w-[90rem] mx-auto px-6 lg:px-12 grid md:grid-cols-2 gap-20 items-center border-b border-white/10 pb-20">
+    <footer id="contact" class="bg-white pt-32 pb-12 border-t border-black/5">
+        <div class="max-w-[100rem] mx-auto px-6 lg:px-12 grid md:grid-cols-2 gap-20 items-center border-b border-black/10 pb-24">
+            
             <div>
-                <p class="text-gold tracking-[0.3em] font-bold text-sm mb-4">INITIATE A PROJECT</p>
-                <h2 class="text-6xl md:text-7xl font-heading font-black text-white mb-10 leading-[0.9]">LET'S BUILD <br>YOUR VISION.</h2>
+                <p class="text-accent tracking-[0.4em] font-bold text-xs mb-6">INITIATE A PROJECT</p>
+                <h2 class="text-[3rem] md:text-[5rem] font-heading font-black text-rich-black mb-8 leading-[0.9] tracking-tighter">
+                    LET'S BUILD <br>YOUR VISION.
+                </h2>
+                <p class="text-lg text-gray-600 font-light leading-relaxed max-w-md mb-12">
+                    Available for site visits, architectural scope assessments, and tailored commercial proposals across the UAE.
+                </p>
+                
                 <div class="space-y-6">
-                    <p class="flex items-center text-xl text-gray-400 font-light"><i class="fa-solid fa-envelope text-white mr-6 w-6"></i> info@tzconstruction.com</p>
-                    <p class="flex items-center text-xl text-gray-400 font-light"><i class="fa-solid fa-phone text-white mr-6 w-6"></i> +971 58 5350242</p>
-                    <p class="flex items-center text-xl text-gray-400 font-light"><i class="fa-solid fa-location-dot text-white mr-6 w-6"></i> Dubai, United Arab Emirates</p>
+                    <p class="flex items-center text-lg text-rich-black font-medium"><i class="fa-solid fa-envelope text-accent mr-6 w-6"></i> info@tzconstruction.com</p>
+                    <p class="flex items-center text-lg text-rich-black font-medium"><i class="fa-solid fa-phone text-accent mr-6 w-6"></i> +971 58 5350242</p>
+                    <p class="flex items-center text-lg text-rich-black font-medium"><i class="fa-solid fa-location-dot text-accent mr-6 w-6"></i> Dubai, United Arab Emirates</p>
                 </div>
             </div>
             
-            <div class="bg-[#0f0f0f] p-12 border border-white/10">
-                <form class="space-y-8">
-                    <div class="border-b border-gray-700 pb-2">
-                        <input type="text" placeholder="FULL NAME" class="w-full bg-transparent text-white font-heading tracking-widest text-sm focus:outline-none placeholder-gray-600" required>
+            <div class="bg-[#F3F2EE] p-10 md:p-14 border border-black/5">
+                <form class="space-y-10">
+                    <div class="border-b border-rich-black/30 pb-2">
+                        <input type="text" placeholder="FULL NAME" class="w-full bg-transparent text-rich-black font-heading font-bold tracking-widest text-xs focus:outline-none placeholder-gray-500" required>
                     </div>
-                    <div class="border-b border-gray-700 pb-2">
-                        <input type="email" placeholder="EMAIL ADDRESS" class="w-full bg-transparent text-white font-heading tracking-widest text-sm focus:outline-none placeholder-gray-600" required>
+                    <div class="border-b border-rich-black/30 pb-2">
+                        <input type="email" placeholder="EMAIL ADDRESS" class="w-full bg-transparent text-rich-black font-heading font-bold tracking-widest text-xs focus:outline-none placeholder-gray-500" required>
                     </div>
-                    <div class="border-b border-gray-700 pb-2">
-                        <textarea placeholder="PROJECT DETAILS" rows="3" class="w-full bg-transparent text-white font-heading tracking-widest text-sm focus:outline-none placeholder-gray-600 resize-none" required></textarea>
+                    <div class="border-b border-rich-black/30 pb-2">
+                        <textarea placeholder="PROJECT DETAILS" rows="3" class="w-full bg-transparent text-rich-black font-heading font-bold tracking-widest text-xs focus:outline-none placeholder-gray-500 resize-none" required></textarea>
                     </div>
-                    <button type="submit" class="w-full bg-white text-black font-heading font-black uppercase tracking-[0.2em] py-5 hover:bg-gold hover:text-white transition duration-300 mt-6">SEND MESSAGE</button>
+                    <button type="submit" class="w-full bg-rich-black text-[#F3F2EE] font-heading font-black uppercase tracking-[0.2em] py-5 hover:bg-accent transition duration-400 mt-8 text-sm">
+                        SEND INQUIRY
+                    </button>
                 </form>
             </div>
         </div>
         
-        <div class="max-w-[90rem] mx-auto px-6 lg:px-12 pt-10 flex flex-col md:flex-row justify-between items-center text-gray-600 text-xs font-heading font-bold tracking-widest uppercase">
+        <div class="max-w-[100rem] mx-auto px-6 lg:px-12 pt-12 flex flex-col md:flex-row justify-between items-center text-gray-500 text-[10px] font-heading font-bold tracking-[0.2em] uppercase">
             <p>&copy; 2026 T&Z GOLDEN BUILDING CONSTRUCTION LLC.</p>
-            <p class="mt-4 md:mt-0">DUBAI, UAE</p>
+            <p class="mt-4 md:mt-0 text-rich-black">DUBAI, UAE</p>
         </div>
     </footer>
 
