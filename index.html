@@ -1,262 +1,1388 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>T&Z Golden | Architectural Excellence</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&family=Inter:wght@300;400;500&display=swap');
-        
-        /* * PREMIUM NEUTRAL PALETTE 
-         * Background: Alabaster Stone (#F3F2EE)
-         * Text: Rich Black (#111111)
-         */
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: #F3F2EE; 
-            color: #111111; 
-            overflow-x: hidden;
-        }
-        h1, h2, h3, h4, .font-heading { 
-            font-family: 'Montserrat', sans-serif; 
-            text-transform: uppercase;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>T&Z Golden Building Construction LLC — Dubai, UAE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #C9A84C;
+  --gold2: #E8D08A;
+  --gold3: #8B6914;
+  --cream: #F2EDE4;
+  --dark: #0C0C0C;
+  --dark2: #141414;
+  --dark3: #1E1E1E;
+  --dark4: #252525;
+  --muted: #8A7F6E;
+  --muted2: #C4BAA8;
+}
 
-        .bg-rich-black { background-color: #111111; color: #F3F2EE; }
-        .text-rich-black { color: #111111; }
-        
-        /* Subtle Accent - Muted Bronze */
-        .text-accent { color: #A68A56; }
-        .border-accent { border-color: #A68A56; }
-        .bg-accent { background-color: #A68A56; }
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
 
-        /* Floating Animations for the 3 Portfolio Images */
-        @keyframes float-subtle {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-        @keyframes float-subtle-delayed {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-        
-        .animate-float { animation: float-subtle 7s ease-in-out infinite; }
-        .animate-float-delayed { animation: float-subtle-delayed 9s ease-in-out infinite; animation-delay: 2s; }
-        
-        /* Image Hover Zoom */
-        .img-zoom { transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-        .group:hover .img-zoom { transform: scale(1.05); }
-    </style>
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--dark);
+  color: var(--cream);
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* ═══ CUSTOM CURSOR ═══ */
+#cursor-dot {
+  width: 8px; height: 8px;
+  background: var(--gold);
+  border-radius: 50%;
+  position: fixed; top: 0; left: 0;
+  pointer-events: none; z-index: 9999;
+  transform: translate(-50%,-50%);
+  transition: width .2s, height .2s, background .2s;
+}
+#cursor-ring {
+  width: 36px; height: 36px;
+  border: 1.5px solid rgba(201,168,76,.5);
+  border-radius: 50%;
+  position: fixed; top: 0; left: 0;
+  pointer-events: none; z-index: 9998;
+  transform: translate(-50%,-50%);
+  transition: transform .12s ease-out, width .3s, height .3s;
+}
+body.hovering #cursor-dot { width: 16px; height: 16px; background: var(--gold2); }
+body.hovering #cursor-ring { width: 52px; height: 52px; border-color: rgba(201,168,76,.8); }
+
+/* ═══ NAV ═══ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 800;
+  padding: 22px 6%;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: all .4s ease;
+}
+nav.solid {
+  background: rgba(12,12,12,.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(201,168,76,.12);
+  padding: 14px 6%;
+}
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.75rem; font-weight: 700;
+  color: var(--cream); text-decoration: none;
+  letter-spacing: .04em;
+}
+.nav-logo span { color: var(--gold); }
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a {
+  color: var(--muted); text-decoration: none;
+  font-size: .68rem; font-weight: 600;
+  letter-spacing: .18em; text-transform: uppercase;
+  transition: color .3s; position: relative; padding-bottom: 4px;
+}
+.nav-links a::after {
+  content: ''; position: absolute;
+  bottom: 0; left: 0; width: 0; height: 1px;
+  background: var(--gold); transition: width .3s;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-links a:hover::after { width: 100%; }
+.nav-cta {
+  border: 1px solid var(--gold); color: var(--gold);
+  padding: 9px 22px; font-family: 'Montserrat', sans-serif;
+  font-size: .65rem; font-weight: 700; letter-spacing: .14em;
+  text-transform: uppercase; text-decoration: none;
+  transition: all .3s; background: transparent;
+}
+.nav-cta:hover { background: var(--gold); color: var(--dark); }
+.hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  cursor: pointer; z-index: 900;
+}
+.hamburger span { width: 26px; height: 2px; background: var(--gold); transition: all .3s; display: block; }
+.hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+.mobile-nav {
+  display: none; position: fixed; inset: 0;
+  background: rgba(12,12,12,.98); z-index: 850;
+  flex-direction: column; align-items: center; justify-content: center; gap: 36px;
+}
+.mobile-nav.open { display: flex; }
+.mobile-nav a {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem; color: var(--cream); text-decoration: none;
+  font-weight: 300; transition: color .3s; letter-spacing: .04em;
+}
+.mobile-nav a:hover { color: var(--gold); }
+
+/* ═══ HERO ═══ */
+#hero {
+  min-height: 100vh; position: relative;
+  display: flex; align-items: center;
+  overflow: hidden; padding: 0 6%;
+}
+.hero-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background: radial-gradient(ellipse 90% 70% at 65% 50%, rgba(201,168,76,.06) 0%, transparent 65%),
+              linear-gradient(160deg, #0c0c0c 0%, #111008 55%, #0c0c0c 100%);
+}
+/* animated gold lines bg */
+.hero-lines {
+  position: absolute; inset: 0; z-index: 1; overflow: hidden; pointer-events: none;
+}
+.hero-lines::before {
+  content: '';
+  position: absolute;
+  width: 1px; height: 100%;
+  background: linear-gradient(to bottom, transparent, rgba(201,168,76,.15), transparent);
+  left: 33%; animation: lineSlide 8s ease-in-out infinite;
+}
+.hero-lines::after {
+  content: '';
+  position: absolute;
+  width: 1px; height: 100%;
+  background: linear-gradient(to bottom, transparent, rgba(201,168,76,.08), transparent);
+  left: 66%; animation: lineSlide 8s ease-in-out infinite .5s;
+}
+@keyframes lineSlide {
+  0%, 100% { opacity: 0; transform: scaleY(0) translateY(0); }
+  30%, 70% { opacity: 1; transform: scaleY(1) translateY(0); }
+}
+
+/* floating particles */
+.particles { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.particle {
+  position: absolute; width: 2px; height: 2px;
+  background: var(--gold); border-radius: 50%; opacity: 0;
+  animation: pFloat linear infinite;
+}
+@keyframes pFloat {
+  0% { opacity: 0; transform: translateY(0); }
+  15% { opacity: .7; }
+  85% { opacity: .2; }
+  100% { opacity: 0; transform: translateY(-120px) translateX(30px); }
+}
+
+.hero-content { position: relative; z-index: 3; max-width: 580px; }
+.hero-eyebrow {
+  display: flex; align-items: center; gap: 14px; margin-bottom: 22px;
+  font-size: .62rem; font-weight: 700; letter-spacing: .32em;
+  text-transform: uppercase; color: var(--gold);
+}
+.hero-eyebrow::before { content: ''; width: 44px; height: 1px; background: var(--gold); display: block; }
+h1.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3.2rem, 6.5vw, 6rem);
+  font-weight: 300; line-height: 1.03;
+  color: var(--cream); margin-bottom: 26px;
+}
+h1.hero-title em { font-style: italic; color: var(--gold); }
+.hero-desc {
+  font-size: .85rem; font-weight: 300; color: var(--muted);
+  line-height: 1.9; max-width: 440px; margin-bottom: 44px;
+}
+.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+.btn-gold {
+  background: var(--gold); color: var(--dark);
+  padding: 15px 36px; font-family: 'Montserrat', sans-serif;
+  font-size: .7rem; font-weight: 800; letter-spacing: .14em;
+  text-transform: uppercase; text-decoration: none;
+  transition: all .3s; position: relative; overflow: hidden; display: inline-block;
+}
+.btn-gold::before {
+  content: ''; position: absolute; inset: 0;
+  background: var(--gold3); transform: scaleX(0);
+  transform-origin: left; transition: transform .3s;
+}
+.btn-gold:hover::before { transform: scaleX(1); }
+.btn-gold span { position: relative; z-index: 1; }
+.btn-ghost {
+  border: 1px solid rgba(201,168,76,.35);
+  color: var(--muted2); padding: 15px 36px;
+  font-size: .7rem; font-weight: 600; letter-spacing: .14em;
+  text-transform: uppercase; text-decoration: none;
+  transition: all .3s; display: inline-block;
+}
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+/* 3D floating image collage */
+.hero-visual {
+  position: absolute; right: -2%; top: 50%;
+  transform: translateY(-50%);
+  width: 50%; max-width: 680px; z-index: 2;
+}
+.hero-collage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 10px;
+  transform: perspective(1200px) rotateY(-18deg) rotateX(4deg) scale(.95);
+  animation: collageFloat 7s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+@keyframes collageFloat {
+  0%, 100% { transform: perspective(1200px) rotateY(-18deg) rotateX(4deg) scale(.95) translateY(0); }
+  50% { transform: perspective(1200px) rotateY(-18deg) rotateX(4deg) scale(.95) translateY(-16px); }
+}
+.col-img {
+  border-radius: 6px; overflow: hidden;
+  border: 1px solid rgba(201,168,76,.15);
+  background: var(--dark3); position: relative;
+}
+.col-img:nth-child(1) { aspect-ratio: 4/3; grid-row: span 1; }
+.col-img:nth-child(2) { aspect-ratio: 4/3; margin-top: 36px; }
+.col-img:nth-child(3) { aspect-ratio: 4/3; margin-top: -24px; }
+.col-img:nth-child(4) { aspect-ratio: 4/3; }
+.col-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+.col-img:hover img { transform: scale(1.06); }
+.col-img::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(201,168,76,.04), transparent);
+  pointer-events: none;
+}
+
+/* photo placeholder style */
+.photo-ph {
+  width: 100%; height: 100%; min-height: 160px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, var(--dark3), #1a1506);
+  color: var(--muted); gap: 10px;
+  font-size: .6rem; letter-spacing: .12em; text-transform: uppercase;
+}
+.photo-ph svg { opacity: .35; width: 32px; height: 32px; }
+
+.scroll-hint {
+  position: absolute; bottom: 36px; left: 6%; z-index: 3;
+  display: flex; align-items: center; gap: 12px;
+  font-size: .6rem; letter-spacing: .2em; text-transform: uppercase; color: var(--muted);
+}
+.scroll-anim { width: 44px; height: 1px; background: var(--muted); position: relative; overflow: hidden; }
+.scroll-anim::after {
+  content: ''; position: absolute; top: 0; left: -100%;
+  width: 100%; height: 100%; background: var(--gold);
+  animation: scanLine 2.2s ease-in-out infinite;
+}
+@keyframes scanLine { 0% { left: -100%; } 100% { left: 100%; } }
+
+/* ═══ STATS ═══ */
+#stats {
+  background: var(--dark2);
+  border-top: 1px solid rgba(201,168,76,.1);
+  border-bottom: 1px solid rgba(201,168,76,.1);
+  padding: 60px 6%;
+}
+.stats-inner {
+  max-width: 860px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center;
+}
+.stat-item { position: relative; }
+.stat-item:not(:last-child)::after {
+  content: ''; position: absolute; right: 0; top: 50%;
+  transform: translateY(-50%);
+  width: 1px; height: 50px; background: rgba(201,168,76,.15);
+}
+.stat-n {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.8rem; font-weight: 700; color: var(--gold); line-height: 1;
+  display: block;
+}
+.stat-l {
+  font-size: .6rem; font-weight: 600; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--muted); margin-top: 10px; display: block;
+}
+
+/* ═══ SECTION BASE ═══ */
+section { padding: 110px 6%; }
+.s-tag {
+  display: flex; align-items: center; gap: 12px;
+  font-size: .6rem; font-weight: 700; letter-spacing: .3em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 16px;
+}
+.s-tag::before { content: ''; width: 32px; height: 1px; background: var(--gold); display: block; }
+h2.s-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.4rem, 4.5vw, 4rem);
+  font-weight: 300; line-height: 1.1; color: var(--cream); margin-bottom: 18px;
+}
+h2.s-title em { font-style: italic; color: var(--gold); }
+.s-body {
+  font-size: .85rem; font-weight: 300; color: var(--muted);
+  line-height: 1.9; max-width: 560px;
+}
+
+/* ═══ ABOUT ═══ */
+#about {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 90px; align-items: center;
+}
+.about-visual { position: relative; }
+.about-img-main {
+  aspect-ratio: 3/4; background: var(--dark3); border-radius: 4px; overflow: hidden;
+  border: 1px solid rgba(201,168,76,.1); position: relative;
+}
+.about-img-main img { width: 100%; height: 100%; object-fit: cover; }
+.about-badge {
+  position: absolute; bottom: -28px; right: -28px;
+  background: var(--dark2); border: 1px solid rgba(201,168,76,.3);
+  padding: 22px 26px; animation: badgeFloat 6s ease-in-out infinite;
+  box-shadow: 0 24px 60px rgba(0,0,0,.6);
+  z-index: 2;
+}
+@keyframes badgeFloat {
+  0%, 100% { transform: translateY(0) rotate(-1.5deg); }
+  50% { transform: translateY(-12px) rotate(1.5deg); }
+}
+.badge-n {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem; font-weight: 700; color: var(--gold); line-height: 1;
+}
+.badge-t {
+  font-size: .6rem; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--muted); margin-top: 6px;
+}
+.about-gold-line {
+  position: absolute; top: 40px; left: -20px;
+  width: 4px; height: 100px;
+  background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+}
+.about-kpis {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 20px; margin-top: 40px;
+}
+.kpi-box {
+  border-left: 2px solid rgba(201,168,76,.3); padding-left: 16px;
+}
+.kpi-box strong {
+  display: block; font-family: 'Cormorant Garamond', serif;
+  font-size: 1.7rem; color: var(--gold); font-weight: 600;
+}
+.kpi-box span { font-size: .68rem; color: var(--muted); }
+
+/* ═══ SERVICES ═══ */
+#services { background: var(--dark2); }
+.services-header {
+  display: flex; justify-content: space-between;
+  align-items: flex-end; margin-bottom: 56px; flex-wrap: wrap; gap: 24px;
+}
+.services-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 2px; background: rgba(201,168,76,.07);
+}
+.svc-card {
+  background: var(--dark2); padding: 44px 36px;
+  position: relative; overflow: hidden; transition: background .4s;
+  cursor: default;
+}
+.svc-card:hover { background: #1a1608; }
+.svc-card::after {
+  content: ''; position: absolute;
+  bottom: 0; left: 0; width: 0; height: 2px;
+  background: linear-gradient(90deg, var(--gold3), var(--gold), var(--gold2));
+  transition: width .5s ease;
+}
+.svc-card:hover::after { width: 100%; }
+.svc-icon {
+  width: 52px; height: 52px;
+  border: 1px solid rgba(201,168,76,.28);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold); margin-bottom: 28px;
+  transition: all .35s;
+}
+.svc-card:hover .svc-icon {
+  background: var(--gold); color: var(--dark);
+  transform: rotate(6deg) scale(1.08);
+}
+.svc-num {
+  position: absolute; top: 18px; right: 22px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.5rem; font-weight: 700;
+  color: rgba(201,168,76,.05); line-height: 1;
+  transition: color .4s;
+}
+.svc-card:hover .svc-num { color: rgba(201,168,76,.1); }
+.svc-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem; font-weight: 600; color: var(--cream); margin-bottom: 12px;
+}
+.svc-card p { font-size: .78rem; color: var(--muted); line-height: 1.85; }
+
+/* ═══ WHY ═══ */
+#why {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 90px; align-items: center;
+}
+.why-list { margin-top: 36px; }
+.why-item {
+  border-bottom: 1px solid rgba(201,168,76,.1);
+  padding: 22px 0; display: flex; gap: 18px; align-items: flex-start;
+  transition: padding-left .3s; cursor: default;
+}
+.why-item:hover { padding-left: 10px; }
+.why-dot {
+  width: 9px; height: 9px; background: var(--gold);
+  border-radius: 50%; margin-top: 4px; flex-shrink: 0;
+  transition: transform .3s, box-shadow .3s;
+}
+.why-item:hover .why-dot {
+  transform: scale(1.6);
+  box-shadow: 0 0 10px rgba(201,168,76,.6);
+}
+.why-item h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.18rem; font-weight: 600; color: var(--gold); margin-bottom: 5px;
+}
+.why-item p { font-size: .78rem; color: var(--muted); line-height: 1.8; }
+.why-imgs { display: flex; flex-direction: column; gap: 12px; }
+.why-img-tall {
+  aspect-ratio: 16/10; border-radius: 4px; overflow: hidden;
+  background: var(--dark3); border: 1px solid rgba(201,168,76,.1);
+}
+.why-img-tall img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
+.why-img-tall:hover img { transform: scale(1.05); }
+.why-img-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.why-img-sm {
+  aspect-ratio: 4/3; border-radius: 4px; overflow: hidden;
+  background: var(--dark3); border: 1px solid rgba(201,168,76,.1);
+}
+.why-img-sm img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
+.why-img-sm:hover img { transform: scale(1.07); }
+
+/* ═══ PROJECTS ═══ */
+#projects { background: var(--dark2); }
+.proj-header {
+  display: flex; justify-content: space-between;
+  align-items: flex-end; margin-bottom: 48px;
+  flex-wrap: wrap; gap: 24px;
+}
+.proj-tabs { display: flex; gap: 4px; flex-wrap: wrap; }
+.tab-btn {
+  background: transparent;
+  border: 1px solid rgba(201,168,76,.2);
+  color: var(--muted); padding: 9px 22px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .66rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  cursor: pointer; transition: all .3s;
+}
+.tab-btn.active, .tab-btn:hover {
+  background: var(--gold); border-color: var(--gold); color: var(--dark);
+}
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 260px;
+  gap: 10px;
+}
+.proj-card {
+  position: relative; overflow: hidden;
+  background: var(--dark3);
+  border: 1px solid rgba(201,168,76,.08);
+  cursor: pointer;
+  transition: transform .4s, box-shadow .4s;
+}
+.proj-card:nth-child(1) { grid-column: span 2; }
+.proj-card:nth-child(4) { grid-column: span 2; }
+.proj-card:hover { transform: scale(1.015); box-shadow: 0 20px 60px rgba(0,0,0,.5); }
+.proj-card img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform .7s ease;
+}
+.proj-card:hover img { transform: scale(1.08); }
+.proj-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.88) 0%, transparent 55%);
+  opacity: 0; transition: opacity .4s;
+  display: flex; flex-direction: column; justify-content: flex-end; padding: 24px;
+}
+.proj-card:hover .proj-overlay { opacity: 1; }
+.proj-overlay h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem; color: var(--cream); font-weight: 600;
+}
+.proj-overlay span {
+  font-size: .65rem; color: var(--gold);
+  letter-spacing: .12em; text-transform: uppercase;
+  margin-top: 5px; display: block;
+}
+.proj-ph {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, #181818, #1a1608);
+  gap: 12px; color: var(--muted);
+  font-size: .6rem; letter-spacing: .12em; text-transform: uppercase;
+}
+.proj-ph svg { opacity: .3; width: 36px; height: 36px; }
+
+/* ═══ VIDEOS ═══ */
+#videos { }
+.videos-header { margin-bottom: 48px; }
+.videos-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 14px;
+}
+.video-card {
+  aspect-ratio: 16/9; background: var(--dark2);
+  border: 1px solid rgba(201,168,76,.15); border-radius: 6px;
+  overflow: hidden; position: relative; cursor: pointer;
+  transition: border-color .3s, transform .4s, box-shadow .4s;
+}
+.video-card:hover {
+  border-color: rgba(201,168,76,.55);
+  transform: translateY(-6px);
+  box-shadow: 0 24px 60px rgba(0,0,0,.5);
+}
+.video-card video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.video-ph {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, #141414, #1a1608); gap: 18px;
+}
+.play-circle {
+  width: 68px; height: 68px;
+  border: 1.5px solid rgba(201,168,76,.45); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  transition: all .3s; color: var(--gold);
+}
+.video-card:hover .play-circle {
+  background: var(--gold); border-color: var(--gold);
+  box-shadow: 0 0 30px rgba(201,168,76,.3);
+}
+.video-card:hover .play-circle svg { color: var(--dark); }
+.video-ph-txt {
+  font-size: .65rem; letter-spacing: .18em; text-transform: uppercase; color: var(--muted);
+}
+.video-label-bar {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.8), transparent);
+  padding: 20px 18px 14px;
+  font-size: .65rem; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--muted2); opacity: 0; transition: opacity .3s;
+}
+.video-card:hover .video-label-bar { opacity: 1; }
+
+/* ═══ RECOGNITION ═══ */
+#recognition {
+  background: linear-gradient(160deg, #080700 0%, #140f04 50%, #080700 100%);
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: center;
+}
+.recog-text { }
+.award-card {
+  background: var(--dark2); border: 1px solid rgba(201,168,76,.28);
+  padding: 50px 44px; position: relative; overflow: hidden;
+  animation: cardLevitate 8s ease-in-out infinite;
+  box-shadow: 0 30px 80px rgba(0,0,0,.6),
+              inset 0 1px 0 rgba(201,168,76,.08);
+}
+@keyframes cardLevitate {
+  0%, 100% { transform: translateY(0) rotate(-.5deg); }
+  50% { transform: translateY(-14px) rotate(.5deg); }
+}
+.award-card::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
+}
+.award-card::after {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% -10%, rgba(201,168,76,.06), transparent 60%);
+  pointer-events: none;
+}
+.award-glow {
+  position: absolute; top: -60px; left: 50%;
+  transform: translateX(-50%);
+  width: 200px; height: 120px;
+  background: radial-gradient(ellipse, rgba(201,168,76,.12), transparent 70%);
+  pointer-events: none;
+}
+.award-medal {
+  width: 64px; height: 64px;
+  border: 1.5px solid rgba(201,168,76,.4); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 26px; font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem; font-weight: 700; color: var(--gold);
+  background: rgba(201,168,76,.04); position: relative; z-index: 1;
+}
+.award-from {
+  font-size: .6rem; font-weight: 700; letter-spacing: .22em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
+  position: relative; z-index: 1;
+}
+.award-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.1rem; font-weight: 300; color: var(--cream);
+  margin-bottom: 10px; line-height: 1.2; position: relative; z-index: 1;
+}
+.award-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem; font-weight: 600; color: var(--gold);
+  font-style: italic; margin-bottom: 20px; position: relative; z-index: 1;
+}
+.award-pts {
+  list-style: none; display: flex; flex-direction: column;
+  gap: 9px; margin-bottom: 24px; position: relative; z-index: 1;
+}
+.award-pts li {
+  display: flex; align-items: center; gap: 10px;
+  font-size: .76rem; color: var(--muted);
+}
+.award-pts li::before { content: '✦'; color: var(--gold); font-size: .5rem; }
+.award-year {
+  font-size: .62rem; letter-spacing: .18em; text-transform: uppercase;
+  color: rgba(201,168,76,.45); position: relative; z-index: 1;
+}
+
+/* ═══ CONTACT ═══ */
+#contact { background: var(--dark2); border-top: 1px solid rgba(201,168,76,.1); }
+.contact-inner {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 90px; align-items: start;
+}
+.contact-details { margin-top: 40px; display: flex; flex-direction: column; gap: 26px; }
+.c-row { display: flex; gap: 16px; align-items: flex-start; }
+.c-ico {
+  width: 44px; height: 44px; flex-shrink: 0;
+  border: 1px solid rgba(201,168,76,.22);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold); font-size: 1.1rem;
+  transition: all .3s;
+}
+.c-row:hover .c-ico { background: var(--gold); color: var(--dark); }
+.c-lbl { font-size: .58rem; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+.c-val { font-size: .9rem; color: var(--cream); font-weight: 400; }
+.c-val a { color: var(--cream); text-decoration: none; transition: color .3s; }
+.c-val a:hover { color: var(--gold); }
+form.cform { display: flex; flex-direction: column; gap: 14px; }
+.frow { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.fgrp { display: flex; flex-direction: column; gap: 6px; }
+.fgrp label { font-size: .6rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.fgrp input, .fgrp select, .fgrp textarea {
+  background: rgba(255,255,255,.02);
+  border: 1px solid rgba(201,168,76,.18);
+  padding: 13px 16px; color: var(--cream);
+  font-family: 'Montserrat', sans-serif; font-size: .82rem;
+  outline: none; transition: border-color .3s; width: 100%;
+}
+.fgrp input::placeholder, .fgrp textarea::placeholder { color: rgba(138,127,110,.35); }
+.fgrp input:focus, .fgrp select:focus, .fgrp textarea:focus { border-color: var(--gold); }
+.fgrp select { cursor: pointer; }
+.fgrp select option { background: var(--dark3); }
+.fgrp textarea { min-height: 110px; resize: vertical; }
+.form-btn {
+  background: var(--gold); color: var(--dark); border: none;
+  padding: 16px 44px; font-family: 'Montserrat', sans-serif;
+  font-size: .7rem; font-weight: 800; letter-spacing: .15em;
+  text-transform: uppercase; cursor: pointer;
+  transition: all .3s; position: relative; overflow: hidden;
+  align-self: flex-start; display: inline-block;
+}
+.form-btn::before {
+  content: ''; position: absolute; inset: 0; background: var(--gold3);
+  transform: scaleX(0); transform-origin: left; transition: transform .3s;
+}
+.form-btn:hover::before { transform: scaleX(1); }
+.form-btn span { position: relative; z-index: 1; }
+
+/* ═══ FOOTER ═══ */
+footer {
+  background: var(--dark); border-top: 1px solid rgba(201,168,76,.1);
+  padding: 44px 6%; display: flex;
+  align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 20px;
+}
+.foot-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem; font-weight: 700; color: var(--cream);
+}
+.foot-logo span { color: var(--gold); }
+.foot-tagline { font-size: .68rem; color: var(--muted); font-style: italic; margin-top: 4px; }
+.foot-links { display: flex; gap: 24px; flex-wrap: wrap; }
+.foot-links a { color: var(--muted); text-decoration: none; font-size: .7rem; transition: color .3s; }
+.foot-links a:hover { color: var(--gold); }
+.foot-copy { font-size: .62rem; color: rgba(138,127,110,.45); }
+
+/* ═══ REVEAL ANIMATIONS ═══ */
+.reveal { opacity: 0; transform: translateY(36px); transition: opacity .75s ease, transform .75s ease; }
+.reveal.in { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: .1s; }
+.reveal-d2 { transition-delay: .2s; }
+.reveal-d3 { transition-delay: .3s; }
+.reveal-d4 { transition-delay: .4s; }
+.reveal-d5 { transition-delay: .5s; }
+
+/* ═══ RESPONSIVE ═══ */
+@media (max-width: 1100px) {
+  .hero-visual { display: none; }
+  h1.hero-title { font-size: clamp(2.8rem, 7vw, 4.5rem); }
+  #about, #why, #recognition, .contact-inner { grid-template-columns: 1fr; gap: 50px; }
+  .about-badge { right: 10px; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .proj-grid { grid-template-columns: 1fr 1fr; }
+  .proj-card:nth-child(1), .proj-card:nth-child(4) { grid-column: span 1; }
+  .stats-inner { grid-template-columns: repeat(2, 1fr); }
+  .stat-item:not(:last-child)::after { display: none; }
+}
+@media (max-width: 768px) {
+  .nav-links, .nav-cta { display: none; }
+  .hamburger { display: flex; }
+  section { padding: 80px 5%; }
+  .services-grid { grid-template-columns: 1fr; }
+  .proj-grid { grid-template-columns: 1fr; grid-auto-rows: 220px; }
+  .proj-card:nth-child(1), .proj-card:nth-child(4) { grid-column: span 1; }
+  .frow { grid-template-columns: 1fr; }
+  .videos-grid { grid-template-columns: 1fr; }
+  .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  footer { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .hero-btns { flex-direction: column; align-items: flex-start; }
+  .btn-gold, .btn-ghost { width: 100%; text-align: center; }
+}
+@media (max-width: 480px) {
+  h1.hero-title { font-size: 2.6rem; }
+  h2.s-title { font-size: 2rem; }
+  .stat-n { font-size: 2.8rem; }
+  #stats { padding: 44px 5%; }
+  nav { padding: 16px 5%; }
+}
+</style>
 </head>
-<body class="antialiased selection:bg-[#111111] selection:text-white">
+<body>
 
-    <nav class="fixed w-full z-50 top-0 bg-[#F3F2EE]/90 backdrop-blur-md border-b border-black/5 transition-all duration-300">
-        <div class="max-w-[100rem] mx-auto px-6 lg:px-12">
-            <div class="flex justify-between h-24 items-center">
-                <a href="#home" class="flex-shrink-0">
-                    <span class="text-2xl md:text-3xl font-heading font-black tracking-tighter text-rich-black">T&Z <span class="text-accent font-bold">GOLDEN</span></span>
-                </a>
-                <div class="hidden lg:flex space-x-12 font-heading font-bold tracking-[0.2em] items-center text-[10px] text-gray-500">
-                    <a href="#home" class="hover:text-rich-black transition">HOME</a>
-                    <a href="#about" class="hover:text-rich-black transition">PHILOSOPHY</a>
-                    <a href="#portfolio" class="hover:text-rich-black transition">EXECUTION</a>
-                    <a href="#services" class="hover:text-rich-black transition">EXPERTISE</a>
-                    <a href="#contact" class="bg-rich-black text-[#F3F2EE] px-8 py-4 hover:bg-accent hover:text-white transition duration-400">INITIATE PROJECT</a>
-                </div>
-            </div>
+<!-- CURSOR -->
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#services" onclick="closeMobile()">Services</a>
+  <a href="#projects" onclick="closeMobile()">Projects</a>
+  <a href="#videos" onclick="closeMobile()">Media</a>
+  <a href="#recognition" onclick="closeMobile()">Awards</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+</div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">T<span>&</span>Z</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#videos">Media</a></li>
+    <li><a href="#recognition">Awards</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Get a Quote</a>
+  <div class="hamburger" id="hamburger" onclick="toggleMobile()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-lines"></div>
+  <div class="particles" id="particles"></div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow reveal">Dubai, UAE — Premium Construction</div>
+    <h1 class="hero-title reveal reveal-d1">
+      Building <em>Excellence</em><br>Across Dubai
+    </h1>
+    <p class="hero-desc reveal reveal-d2">
+      T&Z Golden Building Construction LLC delivers premium villa construction, renovation, and fit-out services — backed by 10+ years of hands-on leadership and 50+ completed state projects across Moscow and Baku.
+    </p>
+    <div class="hero-btns reveal reveal-d3">
+      <a href="#contact" class="btn-gold"><span>Start Your Project</span></a>
+      <a href="#projects" class="btn-ghost">View Our Work</a>
+    </div>
+  </div>
+
+  <!-- 3D Floating collage — replace photo-ph divs with your <img> tags -->
+  <div class="hero-visual" id="heroVisual">
+    <div class="hero-collage">
+      <div class="col-img">
+        <!-- PHOTO 1: Replace this div with: <img src="your-photo.jpg" alt="Project"> -->
+        <div class="photo-ph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Add Photo 1
         </div>
-    </nav>
-
-    <section id="home" class="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden">
-        <div class="max-w-[100rem] mx-auto px-6 lg:px-12 w-full grid lg:grid-cols-12 gap-8 items-center relative z-10">
-            
-            <div class="lg:col-span-7 z-20 pt-10">
-                <p class="text-accent tracking-[0.4em] font-bold text-xs mb-8">PREMIUM CONSTRUCTION & RENOVATION</p>
-                
-                <h1 class="text-[4rem] sm:text-[6rem] lg:text-[7.5rem] font-heading font-black leading-[0.85] tracking-tighter text-rich-black mb-8">
-                    ADDING <br>UNYIELDING <br>VALUE.
-                </h1>
-                
-                <p class="text-lg md:text-xl text-gray-600 mb-12 font-light max-w-xl leading-relaxed">
-                    Bringing rigorous European engineering standards to the UAE. We execute visionary architecture with single-point accountability and absolute transparency.
-                </p>
-                <a href="#portfolio" class="inline-block border-b-2 border-rich-black text-rich-black pb-2 font-heading font-bold tracking-[0.2em] text-sm hover:text-accent hover:border-accent transition duration-300">
-                    EXPLORE OUR WORK &rarr;
-                </a>
-            </div>
-
-            <div class="lg:col-span-5 relative h-[60vh] lg:h-[80vh] w-full mt-12 lg:mt-0">
-                <div class="absolute inset-0 bg-accent/10 transform translate-x-4 translate-y-4"></div>
-                <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80" alt="Premium Villa" class="w-full h-full object-cover relative z-10 shadow-2xl filter contrast-[1.1] grayscale-[20%]">
-            </div>
-
+      </div>
+      <div class="col-img">
+        <!-- PHOTO 2: Replace this div with: <img src="your-photo.jpg" alt="Project"> -->
+        <div class="photo-ph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Add Photo 2
         </div>
-    </section>
-
-    <section id="about" class="py-32 bg-white border-y border-black/5">
-        <div class="max-w-[100rem] mx-auto px-6 lg:px-12 grid md:grid-cols-2 gap-20 items-center">
-            
-            <div>
-                <h2 class="text-4xl md:text-5xl font-heading font-black text-rich-black leading-tight mb-8">
-                    WE DON'T JUST MANAGE PROJECTS. <br><span class="text-accent">WE BUILD THEM.</span>
-                </h2>
-                <p class="text-lg text-gray-600 font-light leading-relaxed mb-6">
-                    In the luxury real estate market, fragmented subcontractors lead to compromised execution. Since 2016, T&Z Golden has operated on a model of single accountability. 
-                </p>
-                <p class="text-lg text-gray-600 font-light leading-relaxed">
-                    We act as your singular responsible team, ensuring absolute oversight of site quality, materials, and finish consistency from the foundation to the final polish. Our approach is designed for a long-term reputation in Dubai, built on relationship-first service.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-2 gap-x-8 gap-y-12">
-                <div class="border-t-2 border-rich-black pt-6">
-                    <span class="text-5xl font-heading font-black text-rich-black">10+</span>
-                    <p class="text-xs font-heading font-bold tracking-widest text-gray-500 mt-3">YEARS LEADERSHIP</p>
-                </div>
-                <div class="border-t-2 border-rich-black pt-6">
-                    <span class="text-5xl font-heading font-black text-rich-black">50+</span>
-                    <p class="text-xs font-heading font-bold tracking-widest text-gray-500 mt-3">STATE PROJECTS</p>
-                </div>
-                <div class="col-span-2 bg-[#F3F2EE] p-8 border border-black/5 flex items-start gap-6">
-                    <i class="fa-solid fa-award text-4xl text-accent"></i>
-                    <div>
-                        <h4 class="font-heading font-bold text-rich-black mb-2">MOSCOW GOVERNMENT AWARD</h4>
-                        <p class="text-sm text-gray-600 leading-relaxed">Officially recognized in 2021 for high professionalism and significant contribution to major public construction projects.</p>
-                    </div>
-                </div>
-            </div>
-
+      </div>
+      <div class="col-img">
+        <!-- PHOTO 3: Replace this div with: <img src="your-photo.jpg" alt="Project"> -->
+        <div class="photo-ph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Add Photo 3
         </div>
-    </section>
-
-    <section id="portfolio" class="py-40 bg-rich-black relative">
-        <div class="max-w-[100rem] mx-auto px-6 lg:px-12">
-            
-            <div class="text-center mb-24">
-                <p class="text-accent tracking-[0.4em] font-bold text-xs mb-4">VISUAL PROOF</p>
-                <h2 class="text-5xl md:text-7xl font-heading font-black text-[#F3F2EE]">RECENT EXECUTION</h2>
-            </div>
-
-            <div class="w-full max-w-6xl mx-auto aspect-video bg-black border border-white/10 mb-32 relative shadow-2xl">
-                <video controls class="w-full h-full object-cover" poster="https://images.unsplash.com/photo-1541881451970-13e6d1163462?auto=format&fit=crop&w=1920&q=80">
-                    <source src="assets/master-edit.mp4" type="video/mp4">
-                </video>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-                
-                <div class="h-[30rem] overflow-hidden animate-float bg-black group shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="Execution" class="w-full h-full object-cover img-zoom filter grayscale-[30%] contrast-125">
-                </div>
-                
-                <div class="h-[30rem] overflow-hidden animate-float-delayed mt-0 md:mt-16 bg-black group shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80" alt="Execution" class="w-full h-full object-cover img-zoom filter grayscale-[30%] contrast-125">
-                </div>
-                
-                <div class="h-[30rem] overflow-hidden animate-float bg-black group shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80" alt="Execution" class="w-full h-full object-cover img-zoom filter grayscale-[30%] contrast-125">
-                </div>
-
-            </div>
+      </div>
+      <div class="col-img">
+        <div class="photo-ph" style="background: linear-gradient(135deg,#1a1a1a,#1a1304); color: var(--gold); gap:6px; text-align:center; padding:20px;">
+          <span style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:600; color:var(--gold);">T&Z</span>
+          <span style="font-size:.55rem; letter-spacing:.2em; text-transform:uppercase; color:var(--muted);">Golden Building<br>Construction LLC</span>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
 
-    <section id="services" class="py-32 bg-[#F3F2EE]">
-        <div class="max-w-[100rem] mx-auto px-6 lg:px-12">
-            
-            <div class="mb-20">
-                <p class="text-accent tracking-[0.4em] font-bold text-xs mb-4">END-TO-END SOLUTIONS</p>
-                <h2 class="text-5xl md:text-6xl font-heading font-black text-rich-black">MASTER CRAFTSMANSHIP</h2>
-            </div>
+  <div class="scroll-hint">
+    <div class="scroll-anim"></div>
+    Scroll to explore
+  </div>
+</section>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
-                
-                <div class="border-t border-rich-black pt-8 group">
-                    <i class="fa-solid fa-house text-3xl text-rich-black mb-6 group-hover:text-accent transition duration-300"></i>
-                    <h3 class="text-xl font-heading font-bold text-rich-black mb-4">VILLA CONSTRUCTION</h3>
-                    <p class="text-gray-600 font-light leading-relaxed">End-to-end premium quality structure execution with rigorous engineering and strict on-time delivery.</p>
-                </div>
-                
-                <div class="border-t border-rich-black pt-8 group">
-                    <i class="fa-solid fa-paint-roller text-3xl text-rich-black mb-6 group-hover:text-accent transition duration-300"></i>
-                    <h3 class="text-xl font-heading font-bold text-rich-black mb-4">RENOVATION & FIT-OUT</h3>
-                    <p class="text-gray-600 font-light leading-relaxed">Complete interior and exterior transformations. We utilize automated machine plastering for flawless finishing.</p>
-                </div>
-                
-                <div class="border-t border-rich-black pt-8 group">
-                    <i class="fa-solid fa-fan text-3xl text-rich-black mb-6 group-hover:text-accent transition duration-300"></i>
-                    <h3 class="text-xl font-heading font-bold text-rich-black mb-4">HVAC & TECHNICAL</h3>
-                    <p class="text-gray-600 font-light leading-relaxed">Precision MEP (Mechanical, Electrical, Plumbing) routing and installation of high-efficiency climate systems.</p>
-                </div>
+<!-- ═══ STATS ═══ -->
+<div id="stats">
+  <div class="stats-inner">
+    <div class="stat-item reveal">
+      <span class="stat-n" data-count="10">0</span>
+      <span class="stat-l">Years of Leadership</span>
+    </div>
+    <div class="stat-item reveal reveal-d1">
+      <span class="stat-n" data-count="50">0</span>
+      <span class="stat-l">State Projects Delivered</span>
+    </div>
+    <div class="stat-item reveal reveal-d2">
+      <span class="stat-n" data-count="3">0</span>
+      <span class="stat-l">Markets — Moscow, Baku, Dubai</span>
+    </div>
+    <div class="stat-item reveal reveal-d3">
+      <span class="stat-n" data-count="100">0</span>
+      <span class="stat-l">Client Satisfaction</span>
+    </div>
+  </div>
+</div>
 
-                <div class="border-t border-rich-black pt-8 group">
-                    <i class="fa-solid fa-couch text-3xl text-rich-black mb-6 group-hover:text-accent transition duration-300"></i>
-                    <h3 class="text-xl font-heading font-bold text-rich-black mb-4">FURNITURE & JOINERY</h3>
-                    <p class="text-gray-600 font-light leading-relaxed">Bespoke fitted interior elements, custom wood paneling, and architectural details crafted to match your vision.</p>
-                </div>
+<!-- ═══ ABOUT ═══ -->
+<section id="about">
+  <div class="about-visual reveal">
+    <div class="about-gold-line"></div>
+    <div class="about-img-main">
+      <!-- MAIN ABOUT PHOTO: Replace with <img src="your-photo.jpg" alt="T&Z Team"> -->
+      <div class="photo-ph" style="min-height:420px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:48px;height:48px;"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        Add Your Team / Project Photo Here
+      </div>
+    </div>
+    <div class="about-badge">
+      <div class="badge-n">2016</div>
+      <div class="badge-t">Founded &amp; Operating</div>
+    </div>
+  </div>
 
-                <div class="border-t border-rich-black pt-8 group">
-                    <i class="fa-solid fa-microchip text-3xl text-rich-black mb-6 group-hover:text-accent transition duration-300"></i>
-                    <h3 class="text-xl font-heading font-bold text-rich-black mb-4">SMART HOME SYSTEMS</h3>
-                    <p class="text-gray-600 font-light leading-relaxed">Seamless integration of modern lighting, security networks, and total environmental automation technology.</p>
-                </div>
+  <div class="about-text">
+    <div class="s-tag reveal">About Us</div>
+    <h2 class="s-title reveal reveal-d1">A Legacy of <em>Precision</em><br>Now in Dubai</h2>
+    <p class="s-body reveal reveal-d2">
+      T&Z Golden Building Construction LLC was established in Dubai to deliver high-quality construction, modern finishing, and reliable project execution to the UAE market. Since 2016, we have successfully delivered 50+ government and large-scale projects in Moscow — bringing that same world-class standard to every Dubai villa we build.
+    </p>
+    <div class="about-kpis reveal reveal-d3">
+      <div class="kpi-box">
+        <strong>10+</strong>
+        <span>Years hands-on construction leadership</span>
+      </div>
+      <div class="kpi-box">
+        <strong>50+</strong>
+        <span>State projects in Moscow</span>
+      </div>
+      <div class="kpi-box">
+        <strong>2</strong>
+        <span>International markets before UAE</span>
+      </div>
+      <div class="kpi-box">
+        <strong>UAE</strong>
+        <span>Licensed &amp; operating in Dubai</span>
+      </div>
+    </div>
+    <div style="margin-top:36px;" class="reveal reveal-d4">
+      <a href="#contact" class="btn-gold"><span>Talk to Our Team</span></a>
+    </div>
+  </div>
+</section>
 
-                <div class="border-t border-rich-black pt-8 group">
-                    <i class="fa-solid fa-temperature-arrow-up text-3xl text-rich-black mb-6 group-hover:text-accent transition duration-300"></i>
-                    <h3 class="text-xl font-heading font-bold text-rich-black mb-4">UNDERFLOOR HEATING</h3>
-                    <p class="text-gray-600 font-light leading-relaxed">Invisible, modern heating solutions providing unparalleled comfort and baseline energy efficiency.</p>
-                </div>
+<!-- ═══ SERVICES ═══ -->
+<section id="services">
+  <div class="services-header">
+    <div>
+      <div class="s-tag reveal">What We Do</div>
+      <h2 class="s-title reveal reveal-d1">Core <em>Services</em><br>for the UAE Market</h2>
+    </div>
+    <a href="#contact" class="btn-gold reveal reveal-d2"><span>Request a Scope</span></a>
+  </div>
+  <div class="services-grid">
+    <div class="svc-card reveal">
+      <div class="svc-num">01</div>
+      <div class="svc-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <h3>Villa Construction</h3>
+      <p>End-to-end construction with premium quality and on-time delivery. From foundation to final finish, every detail is executed to the highest standard.</p>
+    </div>
+    <div class="svc-card reveal reveal-d1">
+      <div class="svc-num">02</div>
+      <div class="svc-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      </div>
+      <h3>Renovation &amp; Fit-Out</h3>
+      <p>Complete interior and exterior renovation with high-quality finishing. We transform existing spaces into refined, value-added properties.</p>
+    </div>
+    <div class="svc-card reveal reveal-d2">
+      <div class="svc-num">03</div>
+      <div class="svc-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/><path d="M12 6v6l4 2"/></svg>
+      </div>
+      <h3>HVAC &amp; Technical Works</h3>
+      <p>Design and installation of efficient ventilation and climate systems tailored for UAE's unique environment and building codes.</p>
+    </div>
+    <div class="svc-card reveal reveal-d1">
+      <div class="svc-num">04</div>
+      <div class="svc-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+      </div>
+      <h3>Furniture &amp; Joinery</h3>
+      <p>Custom furniture and fitted interior elements designed and crafted specifically for each project, matching the overall design vision.</p>
+    </div>
+    <div class="svc-card reveal reveal-d2">
+      <div class="svc-num">05</div>
+      <div class="svc-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
+      </div>
+      <h3>Smart Home Systems</h3>
+      <p>Integration of smart home technologies for lighting, climate, security, and full automation — making your property future-ready.</p>
+    </div>
+    <div class="svc-card reveal reveal-d3">
+      <div class="svc-num">06</div>
+      <div class="svc-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22V12M12 12C12 7 7 4 3 6M12 12C12 7 17 4 21 6"/><path d="M3 6v10c3-2 6 0 9 2 3-2 6-4 9-2V6"/></svg>
+      </div>
+      <h3>Underfloor Heating</h3>
+      <p>Modern underfloor heating solutions for enhanced comfort and energy efficiency — installed to international standards.</p>
+    </div>
+  </div>
+</section>
 
-            </div>
+<!-- ═══ WHY T&Z ═══ -->
+<section id="why">
+  <div>
+    <div class="s-tag reveal">Why T&amp;Z</div>
+    <h2 class="s-title reveal reveal-d1">How We <em>Add Value</em><br>to Your Property</h2>
+    <p class="s-body reveal reveal-d2">Every project is engineered not just to look exceptional — but to measurably increase the market value of your property for resale, rental, or long-term investment.</p>
+    <ul class="why-list">
+      <li class="why-item reveal reveal-d2">
+        <div class="why-dot"></div>
+        <div>
+          <h4>Single Point of Accountability</h4>
+          <p>Instead of fragmented subcontractor coordination, you deal with one responsible team from start to finish.</p>
         </div>
-    </section>
-
-    <footer id="contact" class="bg-white pt-32 pb-12 border-t border-black/5">
-        <div class="max-w-[100rem] mx-auto px-6 lg:px-12 grid md:grid-cols-2 gap-20 items-center border-b border-black/10 pb-24">
-            
-            <div>
-                <p class="text-accent tracking-[0.4em] font-bold text-xs mb-6">INITIATE A PROJECT</p>
-                <h2 class="text-[3rem] md:text-[5rem] font-heading font-black text-rich-black mb-8 leading-[0.9] tracking-tighter">
-                    LET'S BUILD <br>YOUR VISION.
-                </h2>
-                <p class="text-lg text-gray-600 font-light leading-relaxed max-w-md mb-12">
-                    Available for site visits, architectural scope assessments, and tailored commercial proposals across the UAE.
-                </p>
-                
-                <div class="space-y-6">
-                    <p class="flex items-center text-lg text-rich-black font-medium"><i class="fa-solid fa-envelope text-accent mr-6 w-6"></i> info@tzconstruction.com</p>
-                    <p class="flex items-center text-lg text-rich-black font-medium"><i class="fa-solid fa-phone text-accent mr-6 w-6"></i> +971 58 5350242</p>
-                    <p class="flex items-center text-lg text-rich-black font-medium"><i class="fa-solid fa-location-dot text-accent mr-6 w-6"></i> Dubai, United Arab Emirates</p>
-                </div>
-            </div>
-            
-            <div class="bg-[#F3F2EE] p-10 md:p-14 border border-black/5">
-                <form class="space-y-10">
-                    <div class="border-b border-rich-black/30 pb-2">
-                        <input type="text" placeholder="FULL NAME" class="w-full bg-transparent text-rich-black font-heading font-bold tracking-widest text-xs focus:outline-none placeholder-gray-500" required>
-                    </div>
-                    <div class="border-b border-rich-black/30 pb-2">
-                        <input type="email" placeholder="EMAIL ADDRESS" class="w-full bg-transparent text-rich-black font-heading font-bold tracking-widest text-xs focus:outline-none placeholder-gray-500" required>
-                    </div>
-                    <div class="border-b border-rich-black/30 pb-2">
-                        <textarea placeholder="PROJECT DETAILS" rows="3" class="w-full bg-transparent text-rich-black font-heading font-bold tracking-widest text-xs focus:outline-none placeholder-gray-500 resize-none" required></textarea>
-                    </div>
-                    <button type="submit" class="w-full bg-rich-black text-[#F3F2EE] font-heading font-black uppercase tracking-[0.2em] py-5 hover:bg-accent transition duration-400 mt-8 text-sm">
-                        SEND INQUIRY
-                    </button>
-                </form>
-            </div>
+      </li>
+      <li class="why-item reveal reveal-d3">
+        <div class="why-dot"></div>
+        <div>
+          <h4>High-Touch Execution</h4>
+          <p>Better oversight of site quality, materials, detailing and finish consistency on every job.</p>
         </div>
-        
-        <div class="max-w-[100rem] mx-auto px-6 lg:px-12 pt-12 flex flex-col md:flex-row justify-between items-center text-gray-500 text-[10px] font-heading font-bold tracking-[0.2em] uppercase">
-            <p>&copy; 2026 T&Z GOLDEN BUILDING CONSTRUCTION LLC.</p>
-            <p class="mt-4 md:mt-0 text-rich-black">DUBAI, UAE</p>
+      </li>
+      <li class="why-item reveal reveal-d4">
+        <div class="why-dot"></div>
+        <div>
+          <h4>Custom-Fit Solutions</h4>
+          <p>Scope tailored for full villa construction, upgrade, fit-out, HVAC or furnishing work — never one-size-fits-all.</p>
         </div>
-    </footer>
+      </li>
+      <li class="why-item reveal reveal-d5">
+        <div class="why-dot"></div>
+        <div>
+          <h4>Relationship-First Service</h4>
+          <p>Our approach is designed for long-term reputation in Dubai — not short-term project turnover.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="why-imgs reveal reveal-d2">
+    <div class="why-img-tall">
+      <!-- WHY PHOTO 1: <img src="your-photo.jpg" alt="Construction site"> -->
+      <div class="photo-ph" style="min-height:200px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:32px;height:32px;"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        Add Photo
+      </div>
+    </div>
+    <div class="why-img-row">
+      <div class="why-img-sm">
+        <!-- WHY PHOTO 2: <img src="your-photo.jpg" alt="Interior"> -->
+        <div class="photo-ph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:24px;height:24px;"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Photo
+        </div>
+      </div>
+      <div class="why-img-sm">
+        <!-- WHY PHOTO 3: <img src="your-photo.jpg" alt="Interior"> -->
+        <div class="photo-ph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:24px;height:24px;"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          Photo
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- ═══ PROJECTS ═══ -->
+<section id="projects">
+  <div class="proj-header">
+    <div>
+      <div class="s-tag reveal">Portfolio</div>
+      <h2 class="s-title reveal reveal-d1">Project <em>Highlights</em></h2>
+    </div>
+    <div class="proj-tabs reveal reveal-d2">
+      <button class="tab-btn active" onclick="filterProj(this,'all')">All</button>
+      <button class="tab-btn" onclick="filterProj(this,'residential')">Residential</button>
+      <button class="tab-btn" onclick="filterProj(this,'public')">Public</button>
+    </div>
+  </div>
+  <div class="proj-grid" id="projGrid">
+    <div class="proj-card reveal" data-cat="residential">
+      <div class="proj-ph">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        Add Project Photo
+      </div>
+      <div class="proj-overlay"><h3>Residential Buildings</h3><span>Moscow, Russia</span></div>
+    </div>
+    <div class="proj-card reveal reveal-d1" data-cat="residential">
+      <div class="proj-ph">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        Add Project Photo
+      </div>
+      <div class="proj-overlay"><h3>Residential Villas</h3><span>Baku, Azerbaijan</span></div>
+    </div>
+    <div class="proj-card reveal reveal-d2" data-cat="residential">
+      <div class="proj-ph">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        Add Project Photo
+      </div>
+      <div class="proj-overlay"><h3>Residential Complex</h3><span>Moscow, Russia</span></div>
+    </div>
+    <div class="proj-card reveal reveal-d1" data-cat="public">
+      <div class="proj-ph">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        Add Project Photo
+      </div>
+      <div class="proj-overlay"><h3>University Restoration</h3><span>Moscow, Russia</span></div>
+    </div>
+    <div class="proj-card reveal reveal-d2" data-cat="public">
+      <div class="proj-ph">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        Add Project Photo
+      </div>
+      <div class="proj-overlay"><h3>Zoo Infrastructure</h3><span>Moscow, Russia</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ VIDEOS ═══ -->
+<section id="videos">
+  <div class="videos-header">
+    <div class="s-tag reveal">Media</div>
+    <h2 class="s-title reveal reveal-d1">Our Work <em>In Action</em></h2>
+    <p class="s-body reveal reveal-d2">See T&Z in action — watch our construction process, renovation transformations, and completed projects.</p>
+  </div>
+  <div class="videos-grid">
+
+    <!-- VIDEO 1 — Replace src="" with your video file path or YouTube embed -->
+    <div class="video-card reveal" onclick="playVideo(this)">
+      <video id="vid1" preload="metadata" loop muted playsinline>
+        <source src="" type="video/mp4">
+        <!-- TO USE: add your video file path above, e.g.: <source src="video1.mp4" type="video/mp4"> -->
+      </video>
+      <div class="video-ph" id="ph1">
+        <div class="play-circle">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>
+        </div>
+        <span class="video-ph-txt">Project Showcase — Video 1</span>
+      </div>
+      <div class="video-label-bar">Construction Process — Add Your Video</div>
+    </div>
+
+    <!-- VIDEO 2 -->
+    <div class="video-card reveal reveal-d1" onclick="playVideo(this)">
+      <video id="vid2" preload="metadata" loop muted playsinline>
+        <source src="" type="video/mp4">
+      </video>
+      <div class="video-ph" id="ph2">
+        <div class="play-circle">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>
+        </div>
+        <span class="video-ph-txt">Renovation Showcase — Video 2</span>
+      </div>
+      <div class="video-label-bar">Renovation &amp; Fit-Out — Add Your Video</div>
+    </div>
+
+    <!-- VIDEO 3 -->
+    <div class="video-card reveal reveal-d2" onclick="playVideo(this)">
+      <video id="vid3" preload="metadata" loop muted playsinline>
+        <source src="" type="video/mp4">
+      </video>
+      <div class="video-ph" id="ph3">
+        <div class="play-circle">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>
+        </div>
+        <span class="video-ph-txt">Villa Tour — Video 3</span>
+      </div>
+      <div class="video-label-bar">Villa Construction — Add Your Video</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ RECOGNITION ═══ -->
+<section id="recognition">
+  <div class="recog-text">
+    <div class="s-tag reveal">Government Recognition</div>
+    <h2 class="s-title reveal reveal-d1">Trusted by <em>Government</em><br>Institutions</h2>
+    <p class="s-body reveal reveal-d2">
+      T&Z's work in Moscow has been officially recognized by the Government of Moscow's Department of Construction — acknowledging our professionalism and significant contribution to major public infrastructure.
+    </p>
+    <p class="s-body reveal reveal-d3" style="margin-top:20px;">
+      Experience trusted by government institutions at the highest level — now bringing those same standards to Dubai.
+    </p>
+    <div style="margin-top:40px;" class="reveal reveal-d4">
+      <a href="#contact" class="btn-gold"><span>Work With Us</span></a>
+    </div>
+  </div>
+
+  <div class="award-card reveal reveal-d2">
+    <div class="award-glow"></div>
+    <div class="award-medal">✦</div>
+    <div class="award-from">Government of Moscow — Dept. of Construction</div>
+    <div class="award-title">Certificate of Appreciation</div>
+    <div class="award-name">Teymur Hasan Ogly Agaragimov</div>
+    <ul class="award-pts">
+      <li>High professionalism &amp; conscientious work</li>
+      <li>Significant personal contribution to public construction</li>
+      <li>Construction of educational facilities in Moscow</li>
+      <li>Professional excellence &amp; quality execution</li>
+    </ul>
+    <div class="award-year">Moscow, 2021 — Signed: R. R. Zagurtudinov</div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact">
+  <div class="contact-inner">
+    <div>
+      <div class="s-tag reveal">Get in Touch</div>
+      <h2 class="s-title reveal reveal-d1">Ready to <em>Discuss</em><br>Your Project?</h2>
+      <p class="s-body reveal reveal-d2">
+        T&Z Golden Building Construction LLC is available for project discussions, site visits, scope assessments, and tailored commercial proposals across Dubai and the UAE.
+      </p>
+      <div class="contact-details">
+        <div class="c-row reveal reveal-d2">
+          <div class="c-ico">✉</div>
+          <div>
+            <div class="c-lbl">Email</div>
+            <div class="c-val"><a href="mailto:info@tzconstruction.com">info@tzconstruction.com</a></div>
+          </div>
+        </div>
+        <div class="c-row reveal reveal-d3">
+          <div class="c-ico">📞</div>
+          <div>
+            <div class="c-lbl">Phone / WhatsApp</div>
+            <div class="c-val"><a href="tel:+971585350242">+971 58 535 0242</a></div>
+          </div>
+        </div>
+        <div class="c-row reveal reveal-d4">
+          <div class="c-ico">📍</div>
+          <div>
+            <div class="c-lbl">Location</div>
+            <div class="c-val">Dubai, United Arab Emirates</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form class="cform reveal reveal-d2" onsubmit="submitForm(event)">
+      <div class="frow">
+        <div class="fgrp">
+          <label>First Name</label>
+          <input type="text" placeholder="Ahmed" required>
+        </div>
+        <div class="fgrp">
+          <label>Last Name</label>
+          <input type="text" placeholder="Al-Mansouri">
+        </div>
+      </div>
+      <div class="fgrp">
+        <label>Email Address</label>
+        <input type="email" placeholder="you@email.com" required>
+      </div>
+      <div class="fgrp">
+        <label>Phone / WhatsApp</label>
+        <input type="tel" placeholder="+971 XX XXX XXXX">
+      </div>
+      <div class="fgrp">
+        <label>Service Required</label>
+        <select>
+          <option value="" disabled selected>Select a service…</option>
+          <option>Villa Construction</option>
+          <option>Renovation &amp; Fit-Out</option>
+          <option>HVAC &amp; Technical Works</option>
+          <option>Furniture &amp; Joinery</option>
+          <option>Smart Home Systems</option>
+          <option>Underfloor Heating</option>
+          <option>Multiple Services</option>
+        </select>
+      </div>
+      <div class="fgrp">
+        <label>Tell Us About Your Project</label>
+        <textarea placeholder="Briefly describe your project, location, and timeline…"></textarea>
+      </div>
+      <button type="submit" class="form-btn"><span>Send Message →</span></button>
+    </form>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div>
+    <div class="foot-logo">T<span>&</span>Z <span style="font-size:1rem; font-weight:400; color:var(--muted2);">Golden Building Construction LLC</span></div>
+    <div class="foot-tagline">"Adding Value to Your Property" — Dubai, UAE</div>
+  </div>
+  <div class="foot-links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#videos">Media</a>
+    <a href="#recognition">Awards</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="foot-copy">© 2025 T&Z Golden Building Construction LLC. Dubai, UAE.</div>
+</footer>
+
+<script>
+// ─── CURSOR ───
+const dot = document.getElementById('cursor-dot');
+const ring = document.getElementById('cursor-ring');
+let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+
+document.addEventListener('mousemove', e => {
+  mouseX = e.clientX; mouseY = e.clientY;
+  dot.style.left = mouseX + 'px';
+  dot.style.top = mouseY + 'px';
+});
+
+function animateRing() {
+  ringX += (mouseX - ringX) * 0.12;
+  ringY += (mouseY - ringY) * 0.12;
+  ring.style.left = ringX + 'px';
+  ring.style.top = ringY + 'px';
+  requestAnimationFrame(animateRing);
+}
+animateRing();
+
+document.querySelectorAll('a, button, .svc-card, .proj-card, .video-card, .why-item').forEach(el => {
+  el.addEventListener('mouseenter', () => document.body.classList.add('hovering'));
+  el.addEventListener('mouseleave', () => document.body.classList.remove('hovering'));
+});
+
+// ─── PARTICLES ───
+const pContainer = document.getElementById('particles');
+for (let i = 0; i < 22; i++) {
+  const p = document.createElement('div');
+  p.classList.add('particle');
+  p.style.left = Math.random() * 100 + '%';
+  p.style.bottom = Math.random() * 30 + '%';
+  p.style.animationDuration = (6 + Math.random() * 8) + 's';
+  p.style.animationDelay = (Math.random() * 8) + 's';
+  p.style.width = p.style.height = (1.5 + Math.random() * 2) + 'px';
+  pContainer.appendChild(p);
+}
+
+// ─── NAV SCROLL ───
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('solid', window.scrollY > 60);
+});
+
+// ─── MOBILE NAV ───
+function toggleMobile() {
+  document.getElementById('mobileNav').classList.toggle('open');
+  document.getElementById('hamburger').classList.toggle('open');
+}
+function closeMobile() {
+  document.getElementById('mobileNav').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('open');
+}
+
+// ─── SCROLL REVEAL ───
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.12 });
+reveals.forEach(r => observer.observe(r));
+
+// ─── COUNTER ANIMATION ───
+const counters = document.querySelectorAll('.stat-n[data-count]');
+const cObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting && !e.target.classList.contains('done')) {
+      e.target.classList.add('done');
+      const target = +e.target.dataset.count;
+      const suffix = target === 100 ? '%' : target >= 10 ? '+' : '';
+      let current = 0;
+      const step = target / 40;
+      const interval = setInterval(() => {
+        current = Math.min(current + step, target);
+        e.target.textContent = Math.round(current) + suffix;
+        if (current >= target) clearInterval(interval);
+      }, 40);
+    }
+  });
+}, { threshold: 0.5 });
+counters.forEach(c => cObs.observe(c));
+
+// ─── PROJECT FILTER ───
+function filterProj(btn, cat) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.proj-card').forEach(card => {
+    const show = cat === 'all' || card.dataset.cat === cat;
+    card.style.display = show ? '' : 'none';
+  });
+}
+
+// ─── VIDEO PLAY ───
+function playVideo(card) {
+  const video = card.querySelector('video');
+  const ph = card.querySelector('.video-ph');
+  if (!video.src && !video.querySelector('source[src]')) return; // no src yet
+  const src = video.querySelector('source');
+  if (src && src.src) {
+    ph.style.display = 'none';
+    video.style.display = 'block';
+    video.play();
+  }
+}
+
+// ─── HERO 3D MOUSE PARALLAX ───
+document.addEventListener('mousemove', e => {
+  const x = (e.clientX / window.innerWidth - .5) * 10;
+  const y = (e.clientY / window.innerHeight - .5) * 6;
+  const v = document.getElementById('heroVisual');
+  if (v) v.style.transform = `translateY(-50%) rotateY(${-18 + x * .3}deg) rotateX(${4 - y * .2}deg)`;
+});
+
+// ─── FORM ───
+function submitForm(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.form-btn span');
+  btn.textContent = 'Message Sent! ✓';
+  setTimeout(() => btn.textContent = 'Send Message →', 3000);
+}
+</script>
 </body>
 </html>
