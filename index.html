@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* CURSOR */
-#dot{width:10px;height:10px;background:#C9A84C;border-radius:50%;position:fixed;pointer-events:none;z-index:9999;display:none;transition:width .15s,height .15s,background .15s;}
+#dot{width:10px;height:10px;background:#C9A84C;border-radius:50%;position:fixed;pointer-events:none;z-index:9999;display:none;}
 #ring{width:38px;height:38px;border:1.5px solid rgba(201,168,76,.6);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;display:none;transition:width .2s,height .2s;}
 *{margin:0;padding:0;box-sizing:border-box;cursor:none !important;}
 html{scroll-behavior:smooth;}
@@ -515,21 +515,21 @@ footer{background:#0D0D0D;border-top:1px solid rgba(201,168,76,.1);padding:36px 
 var dot=document.getElementById('dot');
 var ring=document.getElementById('ring');
 var tx=0,ty=0,rx=0,ry=0;
-document.addEventListener('mousemove',function(e){
+window.addEventListener('mousemove',function(e){
   tx=e.clientX; ty=e.clientY;
   dot.style.display='block';
   ring.style.display='block';
   dot.style.left=(tx-5)+'px';
   dot.style.top=(ty-5)+'px';
 });
-function loop(){
+function curLoop(){
   rx+=(tx-rx)*0.15;
   ry+=(ty-ry)*0.15;
   ring.style.left=(rx-19)+'px';
   ring.style.top=(ry-19)+'px';
-  requestAnimationFrame(loop);
+  requestAnimationFrame(curLoop);
 }
-loop();
+curLoop();
 document.querySelectorAll('a,button,.svc,.pc,.ph-slot,.yt-card').forEach(function(el){
   el.addEventListener('mouseenter',function(){
     dot.style.width='16px';dot.style.height='16px';dot.style.background='#E8D08A';
@@ -560,21 +560,19 @@ function closeMob(){document.getElementById('burger').classList.remove('open');d
 })();
 
 // COUNTERS
-var counted=false;
-window.addEventListener('scroll',function(){
-  if(counted) return;
-  var stats=document.getElementById('stats');
-  if(stats && window.scrollY+window.innerHeight > stats.offsetTop+100){
-    counted=true;
-    document.querySelectorAll('.stat-n[data-target]').forEach(function(el){
-      var target=parseInt(el.getAttribute('data-target'));
-      var inc=target/60; var cur=0;
-      var t=setInterval(function(){
-        cur+=inc;
-        if(cur>=target){cur=target;clearInterval(t);}
-        el.textContent=Math.round(cur)+(el.getAttribute('data-target')==='98'?'%':'+');
-      },33);
-    });
+function countUp(el,target,suffix){
+  var cur=0,inc=target/60;
+  var t=setInterval(function(){
+    cur+=inc;
+    if(cur>=target){cur=target;clearInterval(t);}
+    el.textContent=Math.round(cur)+suffix;
+  },33);
+}
+document.querySelectorAll('.stat-n[data-target]').forEach(function(el){
+  var target=parseInt(el.getAttribute('data-target'));
+  var suffix=target===98?'%':'+';
+  countUp(el,target,suffix);
+});
   }
 });
 
